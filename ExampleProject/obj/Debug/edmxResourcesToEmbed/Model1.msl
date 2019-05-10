@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities">
+    <EntitySetMapping Name="ASOC_PLANRECURSOS">
+      <EntityTypeMapping TypeName="Database1Model.ASOC_PLANRECURSOS">
+        <MappingFragment StoreEntitySet="ASOC_PLANRECURSOS">
+          <ScalarProperty Name="ID_TAREA" ColumnName="ID_TAREA" />
+          <ScalarProperty Name="ID_RECURSO" ColumnName="ID_RECURSO" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_RECURSO">
+      <EntityTypeMapping TypeName="Database1Model.TBL_RECURSO">
+        <MappingFragment StoreEntitySet="TBL_RECURSO">
+          <ScalarProperty Name="RECURSO" ColumnName="RECURSO" />
+          <ScalarProperty Name="ID_RECURSO" ColumnName="ID_RECURSO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_TAREA">
+      <EntityTypeMapping TypeName="Database1Model.TBL_TAREA">
+        <MappingFragment StoreEntitySet="TBL_TAREA">
+          <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+          <ScalarProperty Name="TRABAJOTYPE" ColumnName="TRABAJOTYPE" />
+          <ScalarProperty Name="TRABAJO" ColumnName="TRABAJO" />
+          <ScalarProperty Name="DURACIONTYPE" ColumnName="DURACIONTYPE" />
+          <ScalarProperty Name="DURACION" ColumnName="DURACION" />
+          <ScalarProperty Name="COMPLETADO" ColumnName="COMPLETADO" />
+          <ScalarProperty Name="DEPENDENCIA" ColumnName="DEPENDENCIA" />
+          <ScalarProperty Name="PLANENDDATE" ColumnName="PLANENDDATE" />
+          <ScalarProperty Name="PLANSTARTDATE" ColumnName="PLANSTARTDATE" />
+          <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+          <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="ID_PROJECT" ColumnName="ID_PROJECT" />
+          <ScalarProperty Name="ID_TAREA" ColumnName="ID_TAREA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

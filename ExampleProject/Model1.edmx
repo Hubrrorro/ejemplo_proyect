@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Database1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ASOC_PLANRECURSOS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="ID_RECURSO" Type="int" Nullable="false" />
+          <Property Name="ID_TAREA" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBL_RECURSO">
+          <Key>
+            <PropertyRef Name="ID_RECURSO" />
+          </Key>
+          <Property Name="ID_RECURSO" Type="int" Nullable="false" />
+          <Property Name="RECURSO" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="TBL_TAREA">
+          <Key>
+            <PropertyRef Name="ID_TAREA" />
+          </Key>
+          <Property Name="ID_TAREA" Type="int" Nullable="false" />
+          <Property Name="ID_PROJECT" Type="int" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="STARTDATE" Type="date" />
+          <Property Name="ENDDATE" Type="date" />
+          <Property Name="PLANSTARTDATE" Type="date" />
+          <Property Name="PLANENDDATE" Type="date" />
+          <Property Name="DEPENDENCIA" Type="int" Nullable="false" />
+          <Property Name="COMPLETADO" Type="int" Nullable="false" />
+          <Property Name="DURACION" Type="float" Nullable="false" />
+          <Property Name="DURACIONTYPE" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="TRABAJO" Type="float" Nullable="false" />
+          <Property Name="TRABAJOTYPE" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="ACTIVO" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Database1ModelStoreContainer">
+          <EntitySet Name="ASOC_PLANRECURSOS" EntityType="Self.ASOC_PLANRECURSOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_RECURSO" EntityType="Self.TBL_RECURSO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_TAREA" EntityType="Self.TBL_TAREA" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Database1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Database1Entities" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="ASOC_PLANRECURSOS" EntityType="Database1Model.ASOC_PLANRECURSOS" />
+          <EntitySet Name="TBL_RECURSO" EntityType="Database1Model.TBL_RECURSO" />
+          <EntitySet Name="TBL_TAREA" EntityType="Database1Model.TBL_TAREA" />
+        </EntityContainer>
+        <EntityType Name="ASOC_PLANRECURSOS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="ID_RECURSO" Type="Int32" Nullable="false" />
+          <Property Name="ID_TAREA" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBL_RECURSO">
+          <Key>
+            <PropertyRef Name="ID_RECURSO" />
+          </Key>
+          <Property Name="ID_RECURSO" Type="Int32" Nullable="false" />
+          <Property Name="RECURSO" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TBL_TAREA">
+          <Key>
+            <PropertyRef Name="ID_TAREA" />
+          </Key>
+          <Property Name="ID_TAREA" Type="Int32" Nullable="false" />
+          <Property Name="ID_PROJECT" Type="Int32" Nullable="false" />
+          <Property Name="NAME" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="STARTDATE" Type="DateTime" Precision="0" />
+          <Property Name="ENDDATE" Type="DateTime" Precision="0" />
+          <Property Name="PLANSTARTDATE" Type="DateTime" Precision="0" />
+          <Property Name="PLANENDDATE" Type="DateTime" Precision="0" />
+          <Property Name="DEPENDENCIA" Type="Int32" Nullable="false" />
+          <Property Name="COMPLETADO" Type="Int32" Nullable="false" />
+          <Property Name="DURACION" Type="Double" Nullable="false" />
+          <Property Name="DURACIONTYPE" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="TRABAJO" Type="Double" Nullable="false" />
+          <Property Name="TRABAJOTYPE" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ACTIVO" Type="Int32" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities" >
+          <EntitySetMapping Name="ASOC_PLANRECURSOS">
+            <EntityTypeMapping TypeName="Database1Model.ASOC_PLANRECURSOS">
+              <MappingFragment StoreEntitySet="ASOC_PLANRECURSOS">
+                <ScalarProperty Name="ID_TAREA" ColumnName="ID_TAREA" />
+                <ScalarProperty Name="ID_RECURSO" ColumnName="ID_RECURSO" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_RECURSO">
+            <EntityTypeMapping TypeName="Database1Model.TBL_RECURSO">
+              <MappingFragment StoreEntitySet="TBL_RECURSO">
+                <ScalarProperty Name="RECURSO" ColumnName="RECURSO" />
+                <ScalarProperty Name="ID_RECURSO" ColumnName="ID_RECURSO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_TAREA">
+            <EntityTypeMapping TypeName="Database1Model.TBL_TAREA">
+              <MappingFragment StoreEntitySet="TBL_TAREA">
+                <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+                <ScalarProperty Name="TRABAJOTYPE" ColumnName="TRABAJOTYPE" />
+                <ScalarProperty Name="TRABAJO" ColumnName="TRABAJO" />
+                <ScalarProperty Name="DURACIONTYPE" ColumnName="DURACIONTYPE" />
+                <ScalarProperty Name="DURACION" ColumnName="DURACION" />
+                <ScalarProperty Name="COMPLETADO" ColumnName="COMPLETADO" />
+                <ScalarProperty Name="DEPENDENCIA" ColumnName="DEPENDENCIA" />
+                <ScalarProperty Name="PLANENDDATE" ColumnName="PLANENDDATE" />
+                <ScalarProperty Name="PLANSTARTDATE" ColumnName="PLANSTARTDATE" />
+                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="ID_PROJECT" ColumnName="ID_PROJECT" />
+                <ScalarProperty Name="ID_TAREA" ColumnName="ID_TAREA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

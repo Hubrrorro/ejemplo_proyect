@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Database1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ASOC_PLANRECURSOS">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="ID_RECURSO" Type="int" Nullable="false" />
+    <Property Name="ID_TAREA" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_RECURSO">
+    <Key>
+      <PropertyRef Name="ID_RECURSO" />
+    </Key>
+    <Property Name="ID_RECURSO" Type="int" Nullable="false" />
+    <Property Name="RECURSO" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="TBL_TAREA">
+    <Key>
+      <PropertyRef Name="ID_TAREA" />
+    </Key>
+    <Property Name="ID_TAREA" Type="int" Nullable="false" />
+    <Property Name="ID_PROJECT" Type="int" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="STARTDATE" Type="date" />
+    <Property Name="ENDDATE" Type="date" />
+    <Property Name="PLANSTARTDATE" Type="date" />
+    <Property Name="PLANENDDATE" Type="date" />
+    <Property Name="DEPENDENCIA" Type="int" Nullable="false" />
+    <Property Name="COMPLETADO" Type="int" Nullable="false" />
+    <Property Name="DURACION" Type="float" Nullable="false" />
+    <Property Name="DURACIONTYPE" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="TRABAJO" Type="float" Nullable="false" />
+    <Property Name="TRABAJOTYPE" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="ACTIVO" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="Database1ModelStoreContainer">
+    <EntitySet Name="ASOC_PLANRECURSOS" EntityType="Self.ASOC_PLANRECURSOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_RECURSO" EntityType="Self.TBL_RECURSO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_TAREA" EntityType="Self.TBL_TAREA" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

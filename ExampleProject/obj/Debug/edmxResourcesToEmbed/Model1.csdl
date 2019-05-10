@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Database1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Database1Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ASOC_PLANRECURSOS" EntityType="Database1Model.ASOC_PLANRECURSOS" />
+    <EntitySet Name="TBL_RECURSO" EntityType="Database1Model.TBL_RECURSO" />
+    <EntitySet Name="TBL_TAREA" EntityType="Database1Model.TBL_TAREA" />
+  </EntityContainer>
+  <EntityType Name="ASOC_PLANRECURSOS">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="ID_RECURSO" Type="Int32" Nullable="false" />
+    <Property Name="ID_TAREA" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_RECURSO">
+    <Key>
+      <PropertyRef Name="ID_RECURSO" />
+    </Key>
+    <Property Name="ID_RECURSO" Type="Int32" Nullable="false" />
+    <Property Name="RECURSO" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TBL_TAREA">
+    <Key>
+      <PropertyRef Name="ID_TAREA" />
+    </Key>
+    <Property Name="ID_TAREA" Type="Int32" Nullable="false" />
+    <Property Name="ID_PROJECT" Type="Int32" Nullable="false" />
+    <Property Name="NAME" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="STARTDATE" Type="DateTime" Precision="0" />
+    <Property Name="ENDDATE" Type="DateTime" Precision="0" />
+    <Property Name="PLANSTARTDATE" Type="DateTime" Precision="0" />
+    <Property Name="PLANENDDATE" Type="DateTime" Precision="0" />
+    <Property Name="DEPENDENCIA" Type="Int32" Nullable="false" />
+    <Property Name="COMPLETADO" Type="Int32" Nullable="false" />
+    <Property Name="DURACION" Type="Double" Nullable="false" />
+    <Property Name="DURACIONTYPE" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TRABAJO" Type="Double" Nullable="false" />
+    <Property Name="TRABAJOTYPE" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ACTIVO" Type="Int32" Nullable="false" />
+  </EntityType>
+</Schema>
